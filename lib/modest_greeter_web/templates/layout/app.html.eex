@@ -7,10 +7,15 @@
     <title><%= @view_module.document_title(assigns) %></title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <link rel="shortcut icon" type="image/x-icon"
+      href="<%= Routes.static_path(@conn, "/images/modest_greeter.ico") %>">
+    <link rel="apple-touch-icon" type="image/x-icon"
+      href="<%= Routes.static_path(@conn, "/images/modest_greeter256.ico") %>">
   </head>
   <body>
     <header>
-      <h1>ModestGreeter</h1>
+      <h1><%= link "ModestGreeter",
+      to: Routes.home_path(@conn, :index, []) %></h1>
     </header>
     <main>
       <%= @inner_content %>
